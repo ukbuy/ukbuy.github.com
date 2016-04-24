@@ -1,52 +1,58 @@
 <!doctype html>
-<html class="no-js">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>PhotOrgasms</title>
-<link href="https://fonts.googleapis.com/css?family=Oregano" rel="stylesheet" type="text/css">
-    <meta name="viewport" content="width=device-width">
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width'>
 
-    <style>
-        body {
-            background:  #041f31;
-            font-family: "Oregano";
-            color:       #dddddd;
-        }
-        .coming-soon {
-            margin:        50px auto 0 auto;
-            display:       table;
-            font-size:     18px;
-            font-weight:   200;
-            line-height:   30px;
-            border-radius: 6px;
-            padding:       60px;
-            position:      relative;
-        }
-         a {
-  color: #008989;
-}
-a:hover,
-a:focus {
-  color: #f08080;
-}
-            </style>
-</head>
-<body>
+        <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Numans'>
+        <style>
+            html,body{margin:0; padding:0; height:100%; }
+            body {
+                display: table;
+                width: 100%;
 
+                color: black;
+                text-align: center;
+                font-family: 'Numans', sans-serif;
+                white-space: nowrap;
 
-<div class="coming-soon">
+                background:  #041f31;
+                
+                filter:progid:DXImageTransform.Microsoft.Alpha(opacity=100, finishopacity=90, style=2);
+            }
 
-<center>
-<h1>Welcome to PhotOrgasms!</h1>
+            div {
+                display: table-cell;
+                vertical-align: middle;
 
-<h4>We're working hard to launch our website and we'll be ready very soon</h4>
+                text-align: center;
+            }
 
-<h4>Thank you for your interest!!!</h4> </center> </div>
+            span { color:#0ae }
+        </style>
 
+        <title>PhotOrgasms</title>
+    </head>
 
+    <body>
+        <div id="typer">foo</div>
 
-</body>
+        <script src='http://code.jquery.com/jquery-1.9.1.min.js'></script>
+        <script src='jquery.typer.js'></script>
+        <script>
+            var win = $(window),
+                foo = $('#typer');
+
+            foo.typer(['<span>Welcome to <b>PhotOrgasms</b>!</span>', '<span>We are working hard to launch our website.</span>', '<span>We will be ready very soon.</span>']);
+
+            // unneeded...
+            win.resize(function(){
+                var fontSize = Math.max(Math.min(win.width() / (1 * 10), parseFloat(Number.POSITIVE_INFINITY)), parseFloat(Number.NEGATIVE_INFINITY));
+
+                foo.css({
+                    fontSize: fontSize * .4 + 'px'
+                });
+            }).resize();
+        </script>
+    </body>
 </html>
-
-
